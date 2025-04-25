@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './db/conn.mjs';
+import characterRoutes from './routes/characterRoutes.mjs';
 
 
 // Setups
@@ -11,9 +12,11 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+connectDB();
 
 
 // Routes
+app.use('/api/characters', characterRoutes);
 
 
 // Error handling
