@@ -13,7 +13,6 @@ const characterSchema = new mongoose.Schema({
 
     theBoys: {
         type: Boolean,
-        required: true,
     }
 });
 
